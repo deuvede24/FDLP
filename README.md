@@ -1,3 +1,3 @@
-# Exercicis Fonaments
+# Exercises FDLP
 
 ## Fonaments
