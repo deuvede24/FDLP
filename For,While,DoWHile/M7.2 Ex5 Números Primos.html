@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Números primos</title>
+  </head>
+
+  <body>
+    <h1>Números primos</h1>
+    <p>Introduce un número: <input type="number" id="num" /></p>
+    <p><button onclick="verifica()">Prueba</button></p>
+    <p id="resultado"></p>
+
+    <script>
+      //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+      function verifica() {
+        //Variables
+
+        let num = Number(document.getElementById("num").value);
+        let resto = num % 2;
+        let mensaje = " ";
+        let i = 2;
+
+        while (i < num && resto !== 0) {
+          //entro en el bucle para verificar si num es primo o no
+          resto = num % i;
+          i++;
+          console.log("el resto es:", resto);
+        }
+
+        if (
+          (num != 2 && num % 2 == 0) ||
+          (num != 3 && num % 3 == 0) ||
+          (num != 5 && num % 5 == 0) ||
+          (num != 7 && num % 7 == 0) ||
+          (num != 9 && num % 9 == 0)
+        )
+          alert(
+            "Este NO es un número primo, introduce otro número"
+          ); //valida que num NO sea estos valores ni divisible entre estos los mismos.
+        else if (resto !== 0 || num === 2) {
+          mensaje = `Este <b>SÍ</b> es un número primo`; //esto SÍ es un número primo
+          console.log("el resto es:", resto);
+        } else {
+          mensaje = "Este <b>NO</b> es un número primo"; //este NO es un número primo
+          console.log("el resto es:", resto);
+        }
+
+        document.getElementById("resultado").innerHTML = mensaje;
+      }
+    </script>
+  </body>
+</html>

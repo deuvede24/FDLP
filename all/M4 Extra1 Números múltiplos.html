@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números múltiplos</title>
+</head>
+
+<body>
+    <h1>M4.extra1. Calcula si los números son múltiplos o no</h1>
+
+    <h2>Introduce un dividendo entero cualquiera</h2>
+    <p>Dividendo: <input type="number" id="num1" value=" "></p>
+    <h2>Introduce un divisor entre 2 y 7</h2>
+    <p>Divisor: <input type="number" id="num2" value=" "></p>
+    <p><button onclick="comprobar()">Comprobar</button></p>
+    <p id="resultado"></p>
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function comprobar() {
+            //Variables
+            let n1 = parseInt(document.getElementById("num1").value);
+            let n2 = parseInt(document.getElementById("num2").value);
+            let rest = n1 % n2;
+            let mensaje = " ";
+
+            if (n2 < 2 || n2 > 7) {
+                alert("Divisor fuera de rango. Por favor introduce un divisor entre el 2 y 7")
+            }
+
+            else if (n1 % n2 === 0) {
+                mensaje = "El dividendo " + n1 + " SÍ es múltiplo del divisor " + n2;
+            }
+
+            else {
+                mensaje = "El dividendo " + n1 + " NO es múltiplo del divisor " + n2;
+            }
+
+            document.getElementById("resultado").innerHTML = mensaje;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

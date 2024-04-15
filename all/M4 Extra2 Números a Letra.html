@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número a letra</title>
+</head>
+
+<body>
+    <h1>M4.extra1. Números a letras</h1>
+
+    <p>Escribe un número del 0 al 99: <input type="number" id="num" value=" "></p>
+    <p><button onclick="cambiar()">Número a letras</button></p>
+    <p id="resultado"></p>
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function cambiar() {
+            //Variables
+            let num = parseInt(document.getElementById("num").value);
+            let decena = Math.floor(num / 10);
+            let unidad = num - (decena * 10);
+            let resDecenas = Number(" ");
+            let resUnidades = Number(" ");
+            let resultado = Number(0);
+
+            if (isNaN(num < 0 || num > 99)) {
+                alert("introduce un  número válido")
+            }
+
+            else if (decena === 0) {
+                switch (unidad) {
+                    case 1:
+                        resultado = "uno";
+                        break;
+                    case 2:
+                        resultado = "dos";
+                        break;
+                    case 3:
+                        resultado = "tre";
+                        break;
+                    case 4:
+                        resultado = "cuatro";
+                        break;
+                    case 5:
+                        resultado = "cinco";
+                        break;
+                    case 6:
+                        resultado = "seis";
+                        break;
+                    case 7:
+                        resultado = "siete";
+                        break;
+                    case 8:
+                        resultado = "ocho";
+                        break;
+                    case 9:
+                        resultado = "nueve";
+                        break;
+                }
+                document.getElementById("resultado").innerHTML = "El número en letra es: " + resultado;
+            }
+
+
+            else if (decena === 1) {
+                switch (unidad) {
+                    case 0:
+                        resUnidades = "diez";
+                    case 1:
+                        resUnidades = "once";
+                        break;
+                    case 2:
+                        resUnidades = "doce";
+                        break;
+                    case 3:
+                        resUnidades = "trece";
+                        break;
+                    case 4:
+                        resUnidades = "catorce";
+                        break;
+                    case 5:
+                        resUnidades = "quince";
+                        break;
+                    case 6:
+                        resUnidades = "dieciséis";
+                        break;
+                    case 7:
+                        resUnidades = "diecisiete";
+                        break;
+                    case 8:
+                        resUnidades = "dieciocho";
+                        break;
+                    case 9:
+                        resUnidades = "diecinueve";
+                        break;
+                }
+                document.getElementById("resultado").innerHTML = "El número en letra es: " + resUnidades;
+            }
+
+            else if ((decena >= 2 && decena <= 9) && (unidad === 0)) {
+                switch (decena) {
+                    case 2:
+                        resultado = "veinte"
+                        break;
+                    case 3:
+                        resultado = "treinta"
+                        break;
+                    case 4:
+                        resultado = "cuarenta"
+                        break;
+                    case 5:
+                        resultado = "cincuenta"
+                        break;
+                    case 6:
+                        resultado = "sesenta"
+                        break;
+                    case 7:
+                        resultado = "setenta"
+                        break;
+                    case 8:
+                        resultado = "ochenta"
+                        break;
+                    case 9:
+                        resultado = "noventa"
+                        break;
+                }
+                document.getElementById("resultado").innerHTML = "El número en letra es: " + resultado;
+            }
+
+
+            else if (decena === 2) {
+                switch (unidad) {
+                    case 1:
+                        resultado = " veintiuno"
+                        break;
+                    case 2:
+                        resultado = " veintidos"
+                        break;
+                    case 3:
+                        resultado = " veintitres"
+                        break;
+                    case 4:
+                        resultado = " veinticuatro"
+                        break;
+                    case 5:
+                        resultado = " veinitcinco"
+                        break;
+                    case 6:
+                        resultado = " veintiseis"
+                        break;
+                    case 7:
+                        resultado = " veintisiete"
+                        break;
+                    case 8:
+                        resultado = " veintiocho"
+                        break;
+                    case 9:
+                        resultado = " veintinueve"
+                        break;
+
+                }
+                document.getElementById("resultado").innerHTML = "El número en letra es: " + resultado;
+            }
+
+            else if (decena >= 3 && decena <= 9) {
+                switch (unidad) {
+                    case 1:
+                        resultado = " y uno"
+                        break;
+                    case 2:
+                        resultado = " y dos"
+                        break;
+                    case 3:
+                        resultado = " y tres"
+                        break;
+                    case 4:
+                        resultado = " y cuatro"
+                        break;
+                    case 5:
+                        resultado = " y cinco"
+                        break;
+                    case 6:
+                        resultado = " y seis"
+                        break;
+                    case 7:
+                        resultado = " y siete"
+                        break;
+                    case 8:
+                        resultado = " y ocho"
+                        break;
+                    case 9:
+                        resultado = " y nueve"
+                        break;
+                }
+                switch (decena) {
+                    case 3:
+                        resDecenas = "treinta"
+                        break;
+                    case 4:
+                        resDecenas = "cuarenta"
+                        break;
+                    case 5:
+                        resDecenas = "cincuenta"
+                        break;
+                    case 6:
+                        resDecenas = "sesenta"
+                        break;
+                    case 7:
+                        resDecenas = "setenta"
+                        break;
+                    case 8:
+                        resDecenas = "ochenta"
+                        break;
+                    case 9:
+                        resDecenas = "noventa"
+                        break;
+                }
+
+                document.getElementById("resultado").innerHTML = "El número en letra es: " + resDecenas + resultado;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media de edad</title>
+  </head>
+
+  <body>
+    <h1>Media de edad</h1>
+    <p>
+      Dime el número de personas que quieres introducir :
+      <input type="number" id="num" />
+    </p>
+    <p><button onclick="main()">Calcula media</button></p>
+    <p id="resultado"></p>
+
+    <script>
+      //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+      function main() {
+        let media = calcularMediaEdad();
+        document.getElementById(
+          "resultado"
+        ).innerHTML = `La media de edad es <b>${media}</b>`;
+      }
+
+      function calcularMediaEdad() {
+        //Variables
+
+        let num = Number(document.getElementById("num").value);
+        let media = 0;
+        let edades = 0;
+        let total = 0;
+        let mensaje = "";
+
+        for (let i = 1; i <= num; i++) {
+          edades = Number(
+            prompt("Dime la edad: " + i + " con valor entre 0 y 120")
+          );
+          console.log("el valor de i es: ", i);
+          if (edades < 0 || edades > 120) {
+            alert("El valor está fuera de rango!");
+            prompt("Introduce un valor entre 0 y 120");
+          }
+          else
+          total += edades;
+          console.log("el valor de edades es:", total);
+        }
+        media = parseInt(total / num);
+        console.log("el valor de media es: ", media);
+        return media;
+      }
+    </script>
+  </body>
+</html>

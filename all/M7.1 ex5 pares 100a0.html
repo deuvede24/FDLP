@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números pares descendentes</title>
+</head>
+
+<body>
+    <h1>Número pares descendentes</h1>
+    <p>Estos son los número pares descendentes del 100 al 0: </p>
+    <p><button onclick="númerosPares()">Números pares</button></p>
+    <p id="pares"></p>
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function númerosPares() {
+            //Variables
+
+            let array = [];
+           // let pares = Number(" ");
+
+            for (let i = 100; i >= 2; i -= 2) {
+                array.push(i);
+            }
+            document.getElementById("pares").innerHTML = "Los números pares son: " + array.join(" ");
+        }
+
+    </script>
+</body>
+
+</html>

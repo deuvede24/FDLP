@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números factorial</title>
+</head>
+
+<body>
+    <h1>Números factoriales</h1>
+    <p>Introduce un número: <input type="number" id="num" value=" "></p>
+    <p><button onclick="calcularFactorial()">Factorial</button></p>
+    <p id="resultado"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcularFactorial() {
+            //Variables
+
+            let num = Number(document.getElementById("num").value);
+            let resultado = 1;
+
+            if (num <= 0) {
+                alert("Introduce un número entero positivo");
+            }
+            for (let i = 1; i <= num; i++) {
+
+                resultado = resultado * i
+            }
+            document.getElementById("resultado").innerHTML = "El fatorial de " + num + " es: " + resultado;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

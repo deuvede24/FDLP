@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo con números</title>
+  </head>
+
+  <body>
+    <h1>Cálculo con números</h1>
+    <p>Introduce un número: <input id="num1" value=" " /></p>
+    <p>Introduce otro número: <input id="num2" value=" " /></p>
+    <p>
+      Selecciona la operación a realizar:
+      <select id="op">
+        <option value="1">suma</option>
+        <option value="2">resta</option>
+        <option value="3">multiplicación</option>
+        <option value="4">división</option>
+      </select>
+    </p>
+
+    <p><button onclick="main()">Calcular</button></p>
+    <h2>Resultados</h2>
+    <p id="suma"></p>
+    <p id="resta"></p>
+    <p id="multiplicación"></p>
+    <p id="división"></p>
+    <p id="resultado"></p>
+    <script>
+      //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+
+      function main() {
+        //Variables
+        let varNum1 = Number(document.getElementById("num1").value);
+        let varNum2 = Number(document.getElementById("num2").value);
+        let op = Number(document.getElementById("op").value);
+        let res = 0;
+      
+        let sumar = sum(varNum1, varNum2);
+        let restar = rest(varNum1, varNum2);
+        let multiplicar = mul(varNum1, varNum2);
+        let dividir = div(varNum1, varNum2);
+
+        switch (op) {
+          case 1:
+            res = sum(varNum1 + varNum2);
+            document.getElementById("resultado").innerHTML = `El resultado de la operación</b> es el <b>${sumar}</b>`;
+            break;
+          case 2:
+            res = rest(varNum1 - varNum2);
+            document.getElementById("resultado").innerHTML = `El resultado de la operación</b> es el <b>${restar}</b>`;
+            break;
+          case 3:
+            res = mul(varNum1 * varNum2);
+            document.getElementById("resultado").innerHTML = `El resultado de la operación</b> es el <b>${multiplicar}</b>`;
+            break;
+          case 4:
+            res = div(varNum1 / varNum2);
+            document.getElementById("resultado").innerHTML = `El resultado de la operación</b> es el <b>${dividir}</b>`;
+            break;
+        }
+      }
+
+      function sum(n1, n2) {
+        let sumar = n1 + n2;
+        return sumar;
+      }
+
+      function rest(n1, n2) {
+        let restar = n1 - n2;
+        return restar;
+      }
+
+      function mul(n1, n2) {
+        let multiplicar = n1 * n2;
+        return multiplicar;
+      }
+
+      function div(n1, n2) {
+        let dividir = n1 / n2;
+        return dividir;
+      }
+    </script>
+  </body>
+</html>

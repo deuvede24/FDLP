@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body { margin: 0 auto; width:80%; font-family: 'Segoe UI', 'Open sans', Geneva, Verdana, sans-serif;}
+      #container {padding: 0.5em 2em 0.5em 2em;}
+      .pregunta {color:rgba(24, 24, 122, 0.876);}
+      .respuesta {color:rgb(161, 13, 13);}
+      .noSpace {margin:0;}
+      em {color: red;}
+	button {padding: 1px 10px; text-align: left;}
+   </style>
+   <title>Examen FDLP</title>
+</head>
+<body>
+   <div id="container">
+      <h1>Fundamentos de la Programación en JavaScript. </h1>
+      <ol>
+         <li>Leer atentamente el contenido del examen.</li> 
+         <li>Llenar vuestro nombre en el HTML.</li>
+         <li>Los botones a utilizar para ejecutar los ejercicios, ya están dados en el HTML.</li>
+      </ol>
+      <hr>
+      <h2>Estudiante: <em>escribe tu nombre</em></h2>
+      <div class="pregunta">
+         <p>Crea un archivo <strong>main.js</strong> y enlazalo a éste .html.<br>
+            Crea las funcions/clases necesarias <mark>y llámalas desde los botones del HTML</mark>, para dar solución a las preguntas:</strong></p>
+         <h3>Pregunta 1</h3>
+         <p>Crea una función llamada <em>p1()</em> que genere 50 números del 1 al 20 de forma aleatoria y los guarde en un array denominado <b>datosEntrada</b>. Una vez generados estos 50 números, llena (usando el procedimiento que consideres) un array vacío denominado <b>datosSalida</b> con los números únicos (sin repetirse) dentro del array <b>datosEntrada</b> ordenados de menor a mayor.</p>
+         <p>Muestra el contenido de ambos arrays en los <b>span denominados</b> <em>entrada</em> y <em>salida</em> respectivamente.</p>
+      </div>
+      <div class="respuesta">
+         <h3>Solución pregunta 1</h3>
+         <p><button onclick='p1()'>Ejecutar p1()</button></p>
+         <ol>
+            <li>Datos de entrada: <span id="entrada"> </span></li>
+            <li>Datos de salida:  <span id="salida"> </span></li>
+         </ol>
+      </div>
+      <hr>
+      <div class="pregunta">
+		<h3>Pregunta 2</h3>
+		<ol style="list-style-type:lower-alpha;">
+			<li>Crear una clase <b>Persona</b> con los atributos siguientes:</li><!-- a -->
+			<ul>
+				<li>nombreCompleto</li>
+				<li>pesoKg</li>
+				<li>estaturaCm</li>
+				<li>hobbies (array de hobbies). Inicialmente deberá estar vacío.</li>
+			</ul>
+			<p>Y los siguientes métodos</p>
+			<ul>
+				<li><b>IMC</b>: índice de masa corporal (IMC), que se calcula dividiendo los kilogramos de peso entre el cuadrado de la estatura en metros <em>IMC = pesoKg/estaturaMetros<sup>2</sup></em>.</li>
+            <li><b>agregarHobbie(valor)</b>: permite agregar un hobbie al array de hobbies de la persona.</li>
+				<li>El método <b>toString()</b> que deberá mostrar todos los atributos del objeto más el método IMC.</li>
+			</ul>
+         <br>
+			<li>Enlazar el fichero con la clase a éste .html</li><!-- b -->
+			<li>Crear un array de tres elementos donde se instancien <b>tres</b> personas <em>manualmente</em></li><!-- c --> 
+         <p><em>Directamente, (sin programar las funciones del CRUD):</em></p>
+			<li>Mostrar con un alert, los datos de la segunda persona introducida. (Función <em>p2d()</em>)</li> <!-- d -->
+			<li>Probar el método <strong>agregarHobbie</strong> agregando (manualmente) dos hobbies a la primera persona del array</li> 
+         <li>Mostrar los datos de todas las personas del array para comprobar que todo esté correcto. (Funció <em>p2e()</em>)</li>
+         </ol>
+      </div>
+      <div class="respuesta">
+         <h3>Solución pregunta 2</h3>
+         <p><button onclick='p2d()'>P2d. Datos de la segunda persona del array </button></p>
+         <p><button onclick='p2e()'>P2e. Datos de todas las personas introducidas</button></p>
+
+      </div>
+   </div>
+
+   <script src="classPersona.js"></script>
+   <script src="arrayPersonas.js"></script>
+   <script src="main.js"></script>
+
+
+</body>
+</html>

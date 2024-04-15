@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha de asteriscos</title>
+</head>
+
+<body>
+    <h1>Flecha de asteriscos</h1>
+    <p>Introduce un número de líneas: <input type="number" id="num1"></p>
+    <p><button onclick="dibujarL()">Dibuja L</button></p>
+    <p id="dibujo"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function dibujarL() {
+            //Variables
+            let num = Number(document.getElementById("num1").value);
+            let altura = "";
+            let base = "";
+            const calculo = parseInt((num / 2) + 1);
+
+
+            for (let i = 0; i < num - 1; i++) {
+                altura += "*" + "<br>";
+
+            }
+            for (let i = 0; i < calculo; i++) {
+                base += "*"
+
+            }
+
+            document.getElementById("dibujo").innerHTML = altura + base;
+
+        }
+
+    </script>
+</body>
+
+</html>

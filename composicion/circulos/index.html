@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMPOSICIÓN</title>
+  <style>
+    body {margin: 1em 2em;}
+    td, input {text-align: center;}
+  </style>
+</head>
+<body>
+  <details>
+    <summary><mark><strong>Enunciado</strong></mark></summary>
+    <p>Fer una aplicació on l'usuari/ària introdueix les coordenades x, y de dos cercles i els seus respectius radis.
+        Crear la classe Punt i la classe Cercles.</p>
+    <p><strong>Classe Punt</strong></p>
+
+      <p>La classe Punt tindrà els atributs <strong>posicioX i posicioY</strong>. A més, tindrà el constructor parametritzat amb tots els atributs de la classe.</p>
+      
+      <p><strong>Classe Cercle</strong></p>
+        <p>La classe Cercle tindrà els atributs <strong>centre</strong> (un punt) i el <strong>radi</strong> (distància entre el centre i qualsevol punt de la circumferència).
+      A més, tindrà el constructor amb tots els <strong>paràmetres</strong> i els següents <strong>set (7) mètodes:</strong></p>
+      
+     <ul> 
+      <li><em>distanciaCentres(altreCercle)</em>
+        <li>  <em>equals(altreCercle)</em>
+          <li><em>sonConcentrics(altreCercle)</em>
+            <li>  <em>tenenIgualRadi(altreCercle)</em>
+              <li>  <em>sonTangents(altreCercle)</em>
+                <li>   <em>sonSecants(altreCercle)</em>
+                  <li> <em>noEsToquen(altreCercle)</ul></em>
+   
+    <p>El diagrama UML se muestra a continuación:</p>
+    <p><img src="./img/imagecircles.png" alt="composición" width="450px"></p>
+    <hr>
+  </details>
+  <h1>Introduzca los valores de los círculos</h1>
+  <table width="70%">
+      <tr>
+          <th width="15%"></th>
+          <th>Circle A (x)</th>
+          <th>Circle A (y)</th>
+          <th>Circle A (radius)</th>
+          <th>Circle B (x)</th>
+          <th>Circle B (y)</th>
+          <th>Circle B (radius)</th>
+          <th>&nbsp;</th>
+
+      </tr>
+      <tr>
+          <td><strong>VALUES&nbsp;</strong></td>
+          <td><input type="number" id="xCA" value="0" style="width:70px;"></td>
+          <td><input type="number" id="yCA" value="4" style="width:70px;"></td>
+          <td><input type="number" id="rCA" value="2" style="width:70px;"></td>
+          <td><input type="number" id="xCB" value="1" style="width:70px;"></td>
+          <td><input type="number" id="yCB" value="2" style="width:70px;"></td>
+          <td><input type="number" id="rCB" value="1" style="width:70px;"></td>
+          <td><button id="button" onclick="calcular()">Calcular</button>    
+          <td>&nbsp;</td>
+      </tr>
+  
+  </table>
+  <h1>Resultados</h1>
+
+  <ul>
+    <li>Distancia entre círculos: <strong><span id="distancia"></span></strong></li>
+    <br>
+    <li>Son iguales: <strong><span id="iguales"></span></strong></li>
+    <li>Son concéntricos <strong><span id="concentricos"></span></strong></li>
+    <li>Mismo radio: <strong><span id="radio"></span></strong></li>
+    <br>
+    <li>Son tangentes: <strong><span id="tagentes"></span></strong></li>
+    <li>Son secantes <strong><span id="secantes"></span></strong></li>
+    <li>No se tocan: <strong><span id="separados"></span></strong></li>
+    <br>
+    
+  </ul>  
+
+
+  <iframe src="https://www.veed.io/embed/f8a49531-e083-4a43-a1a0-77a232e430cd" width="744" height="504" frameborder="0" title="Grabación de pantalla y cámara - 19 dic 2023" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+  <script src="./js/clases.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

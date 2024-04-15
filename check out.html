@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lee Teclado</title>
+</head>
+<body>
+  <h1>Máquina de escribir</h1>
+  <h2 id="aqui"></h2>
+  <div id="botones">
+    <button onclick="escribe('A')">A</button>
+    <button onclick="escribe('B')">B</button>
+    <button onclick="escribe('C')">C</button>
+    <button onclick="escribe('D')">D</button>
+    <button onclick="escribe('E')">E</button>
+    <button onclick="escribe('F')">F</button>
+    <button onclick="escribe('G')">G</button>
+    <button onclick="escribe('H')">H</button>
+    <button onclick="escribe('I')">I</button>
+    <button onclick="escribe('J')">J</button>
+    <button onclick="escribe('K')">K</button>
+    <button onclick="escribe('L')">L</button>
+    <button onclick="escribe('M')">M</button>
+    <button onclick="escribe('N')">N</button>
+    <button onclick="escribe('Ñ')">Ñ</button>
+    <button onclick="escribe('O')">O</button>
+    <button onclick="escribe('P')">P</button>
+    <button onclick="escribe('Q')">Q</button>
+    <button onclick="escribe('R')">R</button>
+    <button onclick="escribe('S')">S</button>
+    <button onclick="escribe('T')">T</button>
+    <button onclick="escribe('U')">U</button>
+    <button onclick="escribe('V')">V</button>
+    <button onclick="escribe('W')">W</button>
+    <button onclick="escribe('X')">X</button>
+    <button onclick="escribe('Y')">Y</button>
+    <button onclick="escribe('Z')">Z</button>
+    <button onclick="escribe(' ')">espacio</button>
+  </div>
+  <div><button onclick="borraCaracter()">Borrar</button></div>
+  <div><input type="checkbox" id="minuscula"> Escribir en minúsculas</div>
+
+  <script>
+
+    function minusculas(letra) {
+      // Función con parámetro y return - regresa el valor
+      let letraMinuscula = letra.toLowerCase();
+      return letraMinuscula;
+    }
+
+    function escribe(letra) { 
+      // Función con parámetro
+      let minusc = document.getElementById("minuscula").checked;
+      console.log('minusc', minusc);
+      let letraEscribir = (minusc == true) ? minusculas(letra) : letra;
+
+      document.getElementById('aqui').innerHTML += letraEscribir;
+    }
+
+    function borraCaracter(){ 
+      // Función tipo procedimiento no recibe parámetro ni regresa nada (sólo hace)
+      let texto =  document.getElementById('aqui');
+
+      let numCaracteres = texto.innerHTML.length - 1;
+      console.log('numCaracteres', numCaracteres);
+      let palabra = texto.innerHTML.substring(0, numCaracteres);
+      texto.innerHTML = palabra;
+    }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de notas</title>
+</head>
+
+<body>
+    <h1>Media de una clase</h1>
+    <p>Dime el número de notas que quieres introducir : <input type="number" id="num"></p>
+    <p><button onclick="calcularMedia()">Prueba</button></p>
+    <p id="resultado"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcularMedia() {
+            //Variables
+
+            let num = Number(document.getElementById("num").value);
+            let media = 0;
+            let notas = 0;
+            let total = 0;
+        
+            for (let i = 1; i<=num; i++) {
+                notas = Number(prompt("Dime la nota: " + i));
+                console.log("el valor de i es: ", i);
+                total+= notas;
+               
+            }
+            media = (total/num).toFixed(2);
+
+            if (media<5){
+            document.getElementById("resultado").innerHTML = "" + media;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

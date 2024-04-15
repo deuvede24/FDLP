@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doble y Triple</title>
+</head>
+<body>
+    <h1>Introduce un número</h1>
+    <p>Número: <input type="number" id="num" value=" "></p>
+     <p><button onclick="calcular()">Calcular doble y triple</button></p>
+    
+    <p id="cálculo"></p>
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular (){
+            //Variables
+            let n1= Number(document.getElementById("num").value);
+            //Hacemos directamente el cálculo del doble y del triple multiplicnado por 2 y por 3 según el caso 
+            let doble = ((n1) * 2 );
+            let triple = ((n1) * 3 );
+            //Mostramos por pantalla el resultado obtenido con la variable doble y triple
+            document.getElementById ("cálculo").innerHTML = "El doble del número es " + ' ' + doble + " y el triple es " + ' ' + triple;
+            
+        
+        }
+        </script>
+
+</body>
+</html>

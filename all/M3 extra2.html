@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litros de pintura</title>
+</head>
+<body>
+    <h1>Cálculo litros de pintura</h1>
+    <p>Altura: <input type="number" id="alto" value=" "></p>
+    <p>Anchura: <input type="number" id="ancho" value=" "></p>
+    <p>Manos: <input type="number" id="manos" value=" "></p>
+    <p><button onclick="calcular()">Calcular litros</button></p>
+    
+    <p id="cálculo"></p>
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular (){
+            //Variables
+            let alt= Number(document.getElementById("alto").value);
+            let anch= Number(document.getElementById("ancho").value);
+            let mans = Number(document.getElementById("manos").value);
+            //Hacemos directamente la operación de promedio 
+            const K = 12
+            let áreatotal = ((alt) * (anch) * (mans));
+            let litros = ((áreatotal) / (K) );
+            //Mostramos por pantalla el resultado obtenido con la variable resultado que contiene el valor resultante
+            document.getElementById ("cálculo").innerHTML = "El total de litros ue necesitas es: " + ' ' + litros ;
+            
+        
+        }
+        </script>
+
+</body>
+</html>

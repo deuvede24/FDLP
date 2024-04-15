@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo con números</title>
+</head>
+<body>
+    <h1>Ejercicio M3.2</h1>
+    <p>Introduce un número: <input type="number" id="num1" value=" "></p>
+    <p>Introduce otro número: <input type="number" id="num2" value=" "></p>
+    <p><button onclick="calcular()">Aritmética</button></p>
+    <h2>Resultados</h2>
+    <p id="suma"></p>
+    <p id="resta"></p>
+    <p id="multiplicación"></p>
+    <p id="división"></p>
+
+
+  
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular (){
+            //Variables
+            let n1= document.getElementById("num1").value;
+            let n2= document.getElementById("num2").value;
+            //utilizamos parseFloat para poder manejar números decimales
+            let sum= (parseFloat(n1) + parseFloat(n2));
+            document.getElementById ("suma").innerHTML = ("El resultado de la suma es: " + sum);
+            let res= (parseFloat(n1) - parseFloat(n2));
+            document.getElementById ("resta").innerHTML = ("El resultado de la resta es: " + res);
+            let mult= (parseFloat(n1) * parseFloat(n2));
+            document.getElementById ("multiplicación").innerHTML = ("El resultado de la multiplicación es: " + mult);
+            let div= (parseFloat(n1) / parseFloat(n2));
+            document.getElementById ("división").innerHTML = ("El resultado de la división es: " + div);
+        
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucle for</title>
+</head>
+<body>
+  <h1>Imprimir por consola los números según la respuesta dada</h1>
+  <p>Inicio: <input type="number" id="inicio"></p>
+  <p>Fin: <input type="number" id="fin"></p>
+  <p>Incremento: <input type="number" id="incremento"></p>
+  <p>Indica la dirección:
+    <select id="direccion">
+      <option value="1">ascendente</option>
+      <option value="-1">descendente</option>
+    </select>
+  </p>
+  <p><button onclick="imprimir()">Imprimir por consola</button></p>
+  <hr>
+  <p><button onclick="muestraMeses()">Muestra los meses en consola desde un array</button></p>
+
+  <script>
+    function muestraMeses() {
+      let meses=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+      console.log('Elementos del array meses ', meses.length)
+
+      let contenido='';
+      // i++ es lo mismo que i=i+1
+      for (let i = 0; i < meses.length; i++) {
+        // lo de abajo se podría escribir como contenido = contenido + i + " " + meses[i] + '\n';
+        contenido += i + " " + meses[i] + '\n';
+      };
+      console.log(contenido)
+    }
+    
+    function imprimir(){
+      console.clear();
+      let ini =Number(document.getElementById("inicio").value);
+      let fi = Number(document.getElementById("fin").value);
+      let step = Number(document.getElementById("incremento").value);
+      let dire = Number(document.getElementById("direccion").value);
+      
+      if (dire === 1) {
+        for (let i=ini; i<=fi; i=i+step) {
+          console.log('i ', i);          
+        }
+      } else {
+        console.log('dire ', dire);    
+        for (let i=ini; i>=fi; i=i-step) {
+          console.log('i ', i);          
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

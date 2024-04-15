@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha de asteriscos</title>
+</head>
+
+<body>
+    <h1>Flecha de asteriscos</h1>
+    <p>Introduce un número de líneas: <input type="number" id="num" value=" "></p>
+    <p><button onclick="dibujarTriángulo()">Dibuja triángulo</button></p>
+    <p id="dibujo"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function dibujarTriángulo() {
+            //Variables
+            let num = Number(document.getElementById("num").value);
+            let línea = " ";
+            let líneainvertida = " ";
+            let triángulo = " ";
+            let triánguloInvertido = " ";
+            let flecha = " ";
+
+
+            for (let i = 0; i <= num; i++) {
+
+                for (let j = 0; j < i; j++) {
+                    línea += "*";
+                }
+                triángulo += línea + "<br>";
+                línea = " ";
+
+            }
+            for (let i = 1; i < num; i++) {
+
+                for (let j = num - 1; j >= i; j--) {
+                    líneainvertida += "*";
+                    console.log("el núemro es", num);
+                }
+                triánguloInvertido += líneainvertida + "<br>";
+                líneainvertida = " ";
+
+            }
+
+            flecha += triángulo + triánguloInvertido;
+
+            document.getElementById("dibujo").innerHTML = flecha;
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

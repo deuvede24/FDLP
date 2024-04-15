@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Año Bisiesto</title>
+  </head>
+
+  <body>
+    <h1>Año Bisiesto</h1>
+    <p>
+      Dime el número de personas que quieres introducir :
+      <input type="number" id="año" />
+    </p>
+    <p><button onclick="main()">Calcula media</button></p>
+    <p id="resultado"></p>
+
+    <script>
+      //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+      function main() {
+        let mensaje = verificarBisiesto();
+        document.getElementById(
+          "resultado"
+        ).innerHTML = `La media de edad es <b>${mensaje}</b>`;
+      }
+
+      function verificarBisiesto() {
+        //Variables
+
+        let year = Number(document.getElementById("año").value);
+        let mensaje = "";
+
+        // year = prompt("Dime el año que quieres verficiar");
+
+        if (year % 400 === 0 || (year % 4 === 0 && year % 100 != 0))
+          mensaje += "Este año es bisiesto";
+        else mensaje += "Este año no es bisiesto";
+        return mensaje;
+      }
+    </script>
+  </body>
+</html>

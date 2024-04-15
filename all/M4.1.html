@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condicional IF</title>
+</head>
+<body>
+  <h1>Mayoría de edad</h1>
+  <p>Dime tu nombre: <input type="text" id="nombre" value ="María"></p>
+  <p>Dime tu apellido: <input type="text" id="apellido" value ="Pérez"></p>
+  <p>¿Cuántos años tienes? <input type="number" id="años"></p>
+  <p><button onclick="comprobar()">Comprobar edad</button>
+    
+  </p>
+  <p id="resultado"></p>
+
+  <script>
+    function comprobar(){
+      let nombre = document.getElementById("nombre").value;
+      let apellido = document.getElementById("apellido").value;
+      let años = document.getElementById("años").value;
+      let resultado = "Hola" +" " + nombre +" "+ apellido;
+
+
+      if (años >= 18) { 
+        resultado += ", eres mayor de edad"
+      } else 
+        resultado += ", eres menor de edad"
+    
+     
+      
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>
+    

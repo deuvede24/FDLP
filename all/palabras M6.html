@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabras</title>
+</head>
+
+<body>
+    <h1>Mostrar Palabras</h1>
+    <p>Indica el número de palabras que quieres introducir: <input type="number" id="num" value=" "></p>
+
+    <p><button onclick="Mostrar()">Mostrar Palabras</button></p>
+    <p id="mostrar"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function Mostrar() {
+            //Variables
+            let array = [];
+            let palabras = document.getElementById("mostrar").value;
+            let num = Number(document.getElementById("num").value);
+            let palabra = " ";
+
+            for (let i = 1; i<=num; i++) {
+                palabra = prompt("Dime tu primera pabra: " + i)
+                console.log("array", array);
+                console.log("el valor de i es: ", i);
+                array.push(palabra);
+                document.getElementById("mostrar").innerHTML = array;
+            }
+           palabras.innerHTML = array;
+           
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par Impar</title>
+</head>
+
+<body>
+    <h1>Introduce un número</h1>
+    <p>Número: <input type="number" id="num" value=" "></p>
+
+    <p><button onclick="calcular()">Par o Impar</button></p>
+    <p id="resultado"></p>
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular() {
+            //Variables
+            let n1 = Number(document.getElementById("num").value);
+            let resultado = " ";
+
+            if (n1 % 2 === 0) {
+                resultado += "par";
+            }
+            else if (n1 % 2 === 1) {
+                resultado += "impar"
+            }
+            
+            
+            document.getElementById("resultado").innerHTML = "El número es: <b>" + ' ' + resultado + "</b>";
+
+
+        }
+    </script>
+
+</body>
+
+</html>

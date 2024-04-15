@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinanza número aleatorio</title>
+  </head>
+
+  <body>
+    <h1>Avidina número (0-10)</h1>
+    <p><button onclick="adivina()">Prueba</button></p>
+    <p id="resultado"></p>
+
+    <script>
+            //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+            function adivina() {
+              //Variables
+
+              let numRandom = parseInt(Math.ceil(Math.random() * 10));
+              console.log(numRandom);
+              let num = Number(prompt("Ingresa un número: "));
+
+
+              while (numRandom != num) {
+
+                if ((num < 0 ) && (num > 10)){
+                    alert("Valor fuera de rango, introduce un valor entre 0 y 10");
+                    num = (prompt("Dame otro número!"))}
+                else alert("Lo siento, no has adivinado intenta de nuevo")
+                    num = (prompt("Dame otro número"))
+
+             /* do {
+                alert("Valor fuera de rango, introduce un valor entre 0 y 10");
+                num = parseInt(prompt("Dame otro número!"));
+              } while (num < 0 || num > 10)*/
+
+           /*   while (numRandom != num) {
+                alert("Lo siento, no has adivinado intenta de nuevo");
+                num = parseInt(prompt("Dame otro número"));
+              }*/
+            }
+              alert("Muy bien, adivinaste! el número es: " + numRandom);
+              
+            }
+    </script>
+  </body>
+</html>

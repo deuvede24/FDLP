@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+    <h1>Conversión de Celsius a Fahrenheit</h1>
+    <p> Temperatura °C: <input type="number" id="celsius" value=" "></p>
+    <p><button onclick="calcular()">Convertir</button></p>
+    
+    <p id="cálculo"></p>
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular (){
+            //Variables
+            let gra= Number(document.getElementById("celsius").value);
+            //Hacemos directamente la operación de conversión de grados utilizando la constante K y la fórmula dada
+            const K = 32
+            let conversión = (((gra) * (9/5)) + (K));
+            //Mostramos por pantalla el resultado obtenido con la variable conversión
+            document.getElementById ("cálculo").innerHTML = "La temperatura en °F es : <b> " +  ' ' + conversión + "</b>" ;
+            
+        
+        }
+        </script>
+
+</body>
+</html>

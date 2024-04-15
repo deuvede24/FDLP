@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>variables</title>
+</head>
+<body>
+  <h1>Trabajar con variables</h1>
+  
+  <p>Escribe tu nombre:  <input type="text" id="nom" placeholder="Escribe tu nombre"></p>
+  <p>Escribe tu apellido:  <input type="text" id="ape" value="Clemente"></p>
+  <p>Escribe tu edad:  <input type="number" id="edad" value="48"></p>
+  
+  <p><button onclick="saludar()">Saludar</button></p>
+
+  <p id="saludo"><mark>innerHTML</mark></p>
+
+  <script>
+    //TODO LO QUE VIENE DE HTML ES TEXTO
+
+    function saludar() {
+      //variables
+      let nombreCompleto = '';
+      let edat = 0;
+      let mensaje = '';
+      
+      nombreCompleto = document.getElementById('nom').value + ' ' + document.getElementById('ape').value;
+      //Todo lo que viene de HTML es un string con lo cual hay que convertirlo
+      edat = Number(document.getElementById('edad').value) + 1;
+      console.log("Tipo de datos de edad:", typeof(edat));
+
+      mensaje = 'Hola ' + nombreCompleto + '. El próximo año cumplirás ' + edat + ' años.'
+      console.log('mensaje:', mensaje);
+
+      document.getElementById('saludo').innerHTML = mensaje;
+    }
+  </script>
+
+  
+</body>
+</html>

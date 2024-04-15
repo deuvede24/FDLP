@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWITCH mes y días</title>
+</head>
+
+<body>
+  <p>Selecciona el mes:
+    <select id="mes">
+      <option value="1" >1</option>
+      <option value="2" >2</option>
+      <option value="3" >3</option>
+      <option value="4" >4</option>
+      <option value="5" >5</option>
+      <option value="6" >6</option>
+      <option value="7" >7</option>
+      <option value="8" >8</option>
+      <option value="9" >9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+  </p>
+  <p><button onclick="mostrarDíasdelmes()">El de días del mes</button></p>
+  <p id="resultado"></p>
+  <script>
+    function mostrarDíasdelmes() {
+      let mes = Number(document.getElementById("mes").value);
+      let opcionId =  mes;
+      console.log("opcionId", opcionId);      
+      let numDías = Number = 0;
+      //let mesLetra = document.getElementById(opcionId).innerHTML;
+      //console.log("mesLetra", mesLetra);      
+      
+
+      switch (mes) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+          numDías = 31;
+          break;
+        case 4: case 6: case 9: case 11:
+          numDías = 30;
+          break;
+        case 2: 
+          numDías = 28;
+          break;
+        default: 
+          numDías=0;
+          alert("Indica un número entre 1 y 12");
+      } // final switch break sale 
+
+      document.getElementById("resultado").innerHTML= (`El mes <b>${mes}</b> tiene <b>${numDías}</b>`);
+    }
+  </script>
+
+</body>
+
+</html>

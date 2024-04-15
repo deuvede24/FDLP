@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrada/Salida de Datos</title>
+</head>
+<body>
+  <h1>Trabajar con alert y prompt</h1>
+
+  <p><button onclick="saludar()">Comenzar</button></p>
+
+  <script>
+    function saludar() {
+      //variables
+      let nom = prompt('Escribe tu nombre:','María');
+        console.log('nom tiene el valor:', nom);
+      let ape = prompt('Escribe tu apellido:','López');
+        console.log('ape tiene el valor:', ape);
+      //Todo lo que viene de prompt es un string con lo cual hay que convertirlo
+      let edad = Number(prompt('Escribe tu edad:','20'));
+        console.log('edad tiene el valor:', edad);
+        console.log('edad es de tipo:', typeof(edad));
+
+      let nombreCompleto ='';
+      let mensaje = '';
+      let edat = 0;
+
+      nombreCompleto = nom + ' ' + ape;
+      edat = edad + 1;
+
+      mensaje = 'Hola ' + nombreCompleto + '. El próximo año cumplirás ' + edat + ' años.'
+      alert(mensaje);
+
+    }
+
+  </script>
+  
+</body>
+</html>

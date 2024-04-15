@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aleatorio 5 intentos</title>
+  </head>
+
+  <body>
+    <h1>Avidina número (0-10)</h1>
+    <h3>Máx 5 intentos!</h3>
+    <p><button onclick="adivina()">Prueba</button></p>
+
+    <script>
+      //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+      function adivina() {
+        //Variables
+        let numRandom = parseInt(Math.ceil(Math.random() * 10));
+        console.log("número random es", numRandom);
+        num = parseInt(prompt("Ingresa un número: "));
+        let intentos = 0;
+
+        do {
+          alert("Valor fuera de rango, introduce un valor entre 0 y 10");
+          num = parseInt(prompt("Dame otro número!"));
+        } while (num < 0 || num > 10);
+
+        do {
+          num = parseInt(prompt("Ingresa un número: "));
+          intentos += 1;
+        } while (numRandom != num && intentos < 5);
+
+        if (numRandom === num) {
+          alert(
+            "Enhorabona, el número és" +
+              num +
+              "i has necessitat" +
+              intentos +
+              "intents per encertar-lo"
+          );
+        } else {
+          alert("Lo siento, has superado el máximo de intentos");
+        }
+      }
+
+      //  if (intentos === 5) window.close();
+
+      /*   do {
+               num = prompt("Ingresa un número: ");
+           } while ((numRandom != num) && (intentos < 5));
+           if ((numRandom === num)) {
+               alert("Enhorabona, el número és X i has necessitat Y intents per encertar-lo");
+           }
+           else {
+               intentos += 1;
+               alert("Lo siento, has superado el máximo de intentos");
+           }
+           if (intentos === 5) window.close(); 
+       }*/
+    </script>
+  </body>
+</html>

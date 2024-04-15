@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado de caracteres</title>
+</head>
+
+<body>
+    <h1>Dibujo de un cuadrado de caracteres</h1>
+    <p>Introduce un número: <input type="number" id="num" value=" "></p>
+    <p>Introduce un caracter: <input type="text" id="caracter" value=" "></p>
+    <p><button onclick="Dibujar()">Dibuja cuadrado</button></p>
+    <p id="dibujo"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function Dibujar() {
+            //Variables
+            let num = Number(document.getElementById("num").value);
+            let caracter = document.getElementById("caracter").value;
+            let cuadrado = " ";
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= num; j++) {
+                    cuadrado += caracter;
+                } document.getElementById("dibujo").innerHTML += cuadrado;
+                cuadrado = "<br>";
+
+            }
+           
+        }
+
+
+    </script>
+</body>
+
+</html>

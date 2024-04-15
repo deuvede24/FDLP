@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becas</title>
+</head>
+
+<body>
+    <h1>Aptitud Becas</h1>
+    <p>Dime tu edad: <input type="number" id="años" value=" "></p>
+    <p>Dime tu nombre: <input type="text" id="nom" value=" "></p>
+    <p>¿Tienes algún título universitario?:
+        <select id="opciónT">
+            <option value="S">Sí</option>
+            <option value="N">No</option>
+        </select>
+    </p>
+    
+
+    <p>¿Estás en el paro?:
+        <select id="opciónP">
+            <option value="S">Sí</option>
+            <option value="N">No</option>
+        </select>
+    </p>
+
+    <p><button onclick="comprobarBeca()">Comprobar</button></p>
+    <p id="resultado"></p>
+    <p id="mostrar"></p>
+
+    <script>
+        // <p>¿Tienes un título uiversitario? <input type="text" id="paro"></p>
+        function comprobarBeca() {
+            let edad = parseInt(document.getElementById("años").value);
+            let nombre = document.getElementById("nom").value;
+            let titulo = document.getElementById("opciónT").value;
+            let paro = document.getElementById("opciónP").value;
+            let resultado = " ";
+            let beca = 0;
+            let array = [];
+          
+
+           
+                if ((edad >= 18 && titulo === "S") || paro === "S") {
+                    resultado += "Eres apto para una beca";
+                    beca += 1;   
+                    array.push(nom);
+                } 
+                else { resultado += "Lo sentimos, no eres apto para una beca" }
+
+              //  nombre = prompt("Dime tu primera pabra: ");
+            for (let i = 0; i <= 4; i++) {
+                console.log("array", array);
+
+                array.push(nombre);
+              //  document.getElementById("mostrar").innerHTML = array;
+            }
+           
+        
+          document.getElementById("resultado").innerHTML = resultado;
+          nombre.innerHTML = array;
+        }
+      
+        
+    </script>
+
+</body>
+
+</html>

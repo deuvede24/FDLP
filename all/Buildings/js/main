@@ -1,0 +1,90 @@
+const arrayEdificios = [];
+const arrayHoteles = [];
+const arrayHospitales = [];
+const arrayCines = [];
+let posicionActual = 0;
+let edificioNuevo;
+function crearEdificio() {
+  let hospitalEnfermos, hotelHabitaciones, cineAforo, tipoEdificio;
+  let indexAgregar = encontrar();
+  let edificioNuevo;
+  if (indexAgregar == -1) {
+    do {
+      tipoEdificio = prompt(
+        "Indica el tipo de edificio nuevo a crear: 1.Hotel, 2.Hospital, 3.Cine",
+        "1"
+      );
+    } while (!"123".includes(tipoEdificio));
+    let edificioNombre = prompt("Dime el nombre del edificio:", "lola");
+    let edificioPlantas = prompt("Dime el número de plantas:", "5");
+    let edificioSuperficie = prompt("Dame la superficie:", "400");
+
+    if (tipoEdificio == "1") {
+      hotelHabitaciones = prompt(
+        "Indica el número de habitaciones del hotel",
+        "12"
+      );
+      edificioNuevo = new Hotel(
+        edificioNombre,
+        edificioPlantas,
+        edificioSuperficie,
+        hotelHabitaciones
+      );
+    } else if (tipoEdificio == "2") {
+      hospitalEnfermos = prompt("Indica el número de pacientes actuales", "10");
+      edificioNuevo = new Hospital(
+        edificioNombre,
+        edificioPlantas,
+        edificioSuperficie,
+        hospitalEnfermos
+      );
+    } else {
+      cineAforo = prompt("indica el aforo del cine", "300");
+      edificioNuevo = new Cine(
+        edificioNombre,
+        edificioPlantas,
+        edificioSuperficie,
+        cineAforo
+      );
+    }
+    arrayEdificios.push(edificioNuevo);
+    posicionActual = arrayEdificios.length - 1;
+    edificioNombre = arrayEdificios[posicionActual].nombre;
+    edificioPlantas = arrayEdificios[posicionActual].plantas;
+    edificioSuperficie = arrayEdificios[posicionActual].superficie;
+
+    if (edificioNuevo instanceof Cine) {
+      let precioEntradas = prompt(
+        "Cuál es el precio de las entradas?: ",
+        10 + "€"
+      );
+      let numAsistentes = prompt("Dime el número de asistentes: ", "100");
+      alert(edificioNuevo.proyectarSesion(numAsistentes, precioEntradas));
+      
+    } else if (edificioNuevo instanceof Hospital) {
+      let newEnfermos = prompt("Dime el número de pacientes actuales: ", 40);
+      // edificioNuevo.setEnfermos(newEnfermos);
+      alert(edificioNuevo.repartirComida(newEnfermos));
+    }
+
+    alert(edificioNuevo);
+    alert("Edificio creado");
+  } else alert("Este edificio ya existe");
+
+  /* if (edificioNuevo instanceof Cine) {
+    let precioEntradas = prompt(
+      "Cuál es el precio de las entradas?: ",
+      10 + "€"
+    );
+    let numAsistentes = prompt("Dime el número de asistentes: ", "100");
+    alert(edificioNuevo.proyectarSesion(numAsistentes, precioEntradas));
+    
+    
+  }
+
+  else if(edificioNuevo instanceof Hospital){
+   let newEnfermos = prompt("Dime el número de pacientes actuales: ", 40);
+   // edificioNuevo.setEnfermos(newEnfermos);
+    alert(edificioNuevo.repartirComida(newEnfermos));
+  }*/
+}

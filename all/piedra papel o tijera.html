@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+    <h2>Juguemos a piedra, papel o tijera</h2>
+    <p>1.Piedra</p>
+    <p>2.Papel</p>
+    <p>3.Tijera</p>
+    <p>Elige un número (1-3): <input type="number" id="num" value=" "></p>
+
+
+
+    <p><button onclick="jugar()">Ganador</button></p>
+    <p id="resultado"></p>
+
+    <script>
+        // <p>¿Tienes un título uiversitario? <input type="text" id="paro"></p>
+        function jugar() {
+            let num = Number(document.getElementById("num").value);
+            let numrandom = Math.floor(Math.random() * (4 - 1)) + 1
+          //  let jugadaComputadora = ("");
+            let resultado = " ";
+
+            if (num >= 1 && num <= 3) {
+         
+                if (num === 1 && numrandom == 3) {
+                    resultado = "Yo tijera y tú piedra, has ganado!";
+                }
+                else if (num == 2 && numrandom == 1) {
+                    resultado = "Yo piedra y tú papel, has ganado!";
+                }
+                else if (num == 3 && numrandom == 2) {
+                    resultado = "Yo papel y tú tijera, has ganado!";
+                }
+                else if (numrandom === 1 && num == 3) {
+                    resultado = "Yo piedra y tú tijera, has perdido!";
+                }
+                else if (numrandom == 2 && num == 1) {
+                    resultado = "Yo papel y tú piedra, has perdido!";
+                }
+                else if (numrandom == 3 && num == 2) {
+                    resultado = "Yo tijera y tú papel, has perdido!";
+                }
+                else if (num === numrandom) {
+                    resultado += "Empate!";
+
+                }
+
+
+
+                document.getElementById("resultado").innerHTML = resultado;
+            } else alert("Entiendo que no quieres jugar, bybye!");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números pares descendentes</title>
+</head>
+
+<body>
+    <h1>Número pares descendentes</h1>
+    <p>Introduce un número del 1 al 10: <input type="number" id="num" value=" "></p>
+    <p><button onclick="multiplicar()">Table de multiplicar</button></p>
+    <p id="multiplicar"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function multiplicar() {
+            //Variables
+
+            let num = parseInt(document.getElementById("num").value);
+            let tabla = " ";
+
+            for (let i = 1; i <= 10; i++) {
+             
+                tabla +=  num + 'X' + i + " = " + (num * i) + '</br>';
+                document.getElementById("multiplicar").innerHTML = num + "X" + i + "=" + tabla + "<br>";
+            }
+            //   document.getElementById("multiplicar").innerHTML = "La tabla de multiplicar de " + num + "x" + i + "es: " + tabla + ;
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

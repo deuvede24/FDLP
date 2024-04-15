@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>includes</title>
+</head>
+<body>
+  <h1>Quitar de una frase todo lo que no sea consonantes</h1>
+  <p>Escribe una frase: <input type="text" id="texto"></p>
+  <p><button onclick="main()">Limpiar frase</button></p>
+  <p id="textoLimpio"></p>
+  <p id="soloA"></p>
+
+  <script>
+    function main(){
+      console.clear()
+      let frase = document.getElementById("texto").value.toUpperCase();
+
+      let fraseLimpia = dejarConsonantes(frase);
+      let fraseA = dejarLetraA(frase);
+
+
+      document.getElementById("textoLimpio").innerHTML = "La frase limpia es " + fraseLimpia; 
+      document.getElementById("soloA").innerHTML = "La frase con las letras A limpias es " + fraseA; 
+
+    }
+
+    function dejarLetraA(frase) {
+      const LETRA_A = "AÁÀÂ";
+      let fraseA = "";
+      let letra = "";
+
+      for (let i = 0; i< frase.length; i++) {
+        letra = frase[i];
+        if (LETRA_A.includes(letra)) {
+          fraseA += "A";
+        } 
+        console.log("fraseA es ", fraseA);
+      }
+      return fraseA;
+    }
+
+    function dejarConsonantes(frase) {
+      const CONSONANTES = "BCDFGHJKLMNÑPQRSTVWXYZ";
+      let fraseConsonantes = "";
+      let letra = "";
+
+      for (let i = 0; i< frase.length; i++) {
+        letra = frase[i];
+        if (CONSONANTES.includes(letra)) {
+          fraseConsonantes += letra;
+        }
+        console.log("fraseConsonantes es ", fraseConsonantes);
+      }
+      return fraseConsonantes;
+    }
+
+  </script>
+</body>
+</html>

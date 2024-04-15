@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número positivo o negativo </title>
+</head>
+
+<body>
+    <h1>Introduce dos número</h1>
+    <p>Número 1: <input type="number" id="num1" value=" "></p>
+    <p>Número 2: <input type="number" id="num2" value=" "></p>
+    <p><button onclick="comprobar()">Positivo o Negativo</button></p>
+    <p id="resultado"></p>
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function comprobar() {
+            //Variables
+            let n1 = Number(document.getElementById("num1").value);
+            let n2 = Number(document.getElementById("num2").value);
+            let resultado = " ";
+
+            if (n1 === 0 || n2 === 0) {
+                resultado += "Introduce un número diferente de cero"
+            } else if ((n1 > 0 && n2 < 0) || (n1 < 0 && n2 > 0)) {
+                resultado += "Uno de los 2 números es negativo"
+            }
+            
+            document.getElementById("resultado").innerHTML = " " + resultado ;
+
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+function buscar(nomEdificio) {
+  let encontrado = false;
+  let indice = -1;
+  let i = 0;
+  while (i < arrayEdificios.length && !encontrado) {
+    if (arrayEdificios[i].nombre == nomEdificio) {
+      encontrado = true;
+      indice = i;
+    }
+    i++;
+  }
+  return indice;
+}
+
+function encontrar() {
+  let nomBuilding = prompt("Dime el nombre del edificio", "");
+  let indexTrobat = buscar(nomBuilding);
+
+  if (indexTrobat == -1) {
+    alert("Este edificio no existe");
+  }
+  return indexTrobat;
+}
+/////////////////////////////////////////////////////////////////////////
+function verEdificio() {
+    let indexMostrar = encontrar();
+    if (indexMostrar == -1) {
+      alert("Este edificio no está");
+      posicionActual = arrayEdificios.length - 1;
+      //mostrar();
+    } else {
+      let nEdificio = arrayEdificios[indexMostrar].getNombre();
+      let pEdificio = arrayEdificios[indexMostrar].getPlantas();
+      let sEdificio = arrayEdificios[indexMostrar].getSuperficie();
+  
+      alert(`Datos Edificio:\n
+          \t- Nom: ${nEdificio}\n
+          \t- Plantas: ${pEdificio}\n
+          \t- Superficie: ${sEdificio} mt2\n`)
+
+         // alert(edificioNuevo.toString());
+       
+      posicionActual = indexMostrar;
+    //  alert(edificioNuevo);
+    }
+  }
+  
+  
+  function eliminarEdificio() {
+    let indexEliminar = encontrar();
+    if (indexEliminar == -1) {
+      alert("Este edificio no existe");
+      posicionActual = arrayEdificios.length - 1;
+
+    } else {
+      confirm(
+        "Seguro que quieres borrar: " + arrayEdificios[indexEliminar].toString()
+      );
+      arrayEdificios.splice(indexEliminar, 1);
+      alert("Edificio borrado");
+      posicionActual = indexEliminar - 1;
+  
+    }
+  }
+  

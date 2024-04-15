@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triángulo</title>
+</head>
+
+<body>
+    <h1>Triángulo</h1>
+    <p>Introduce un número: <input type="number" id="num" value=" "></p>
+    <p><button onclick="dibujarTriangulo()">Dibuja triángulo</button></p>
+    <p id="dibujo"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function dibujarTriangulo() {
+            //Variables
+            let num = Number(document.getElementById("num").value);
+            let línea = "";
+            let resultado = "";
+
+            for (let i = 1; i <= num; i++) {
+
+                for (let j = 1; j <= i; j++) {
+                    línea += "*";
+                }
+                resultado += línea + "<br>";
+                línea = "";
+
+            }
+            document.getElementById("dibujo").innerHTML += resultado;
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

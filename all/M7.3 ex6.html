@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suma pares e impares de un array</title>
+</head>
+
+<body>
+    <h1>Suma de números de un array</h1>
+    <p>Dado un array de número te mostramos la suma de sus pares e impares:</p>
+    <p><button onclick="sumaPImpares()">Mostrar</button></p>
+    <p id="sumar"></p>
+
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function SumarPImpares() {
+            //Variables
+
+           // let suma = Number(document.getElementById("sumar").value);
+            // let impares = document.getElementById("impares").value;
+            // let num = Number(document.getElementById("num").value);
+            let sumaImpar = 0;
+            let sumaPar = 0;
+           // let suma = 0;
+            const array = ["2", "4", "19", "12", "1"];
+
+            for (let i = 1; i <= array.length; i++) {
+                if (array[i] % 2 === 0) {
+                    sumaPar += array[i];
+                    //array.push(i);
+                }
+                else if (array[i] % 2 === 1) {
+                    sumaImpar += array[i];
+                   // array.push(i);
+
+                }
+            }
+          
+            document.getElementById("sumar").innerHTML = "La suma de los pares del array es: " + sumaPar;
+            document.getElementById("sumar").innerHTML = "La suma de los pares del array es: " + sumaImpar;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

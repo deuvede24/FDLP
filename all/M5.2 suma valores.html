@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de valores entre 2 números</title>
+</head>
+
+<body>
+    <h1>Sumar números</h1>
+    <p>Introduce un número: <input type="number" id="num1" value=" "></p>
+    <p>Introduce otro número: <input type="number" id="num2" value=" "></p>
+    <p><button onclick="Calcular()">Sumar de valores</button></p>
+    <p id="sumar"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function Calcular() {
+            //Variables
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let suma = Number(" ");
+
+            if (isNaN(num1 - num2) <= 0) {
+                for (let i = num1; i <= num2; i++) {
+                    suma = suma + i;
+                    document.getElementById("sumar").innerHTML = "La suma de los valores comprendidos entre los núemros es: <b>" + suma + "</b>";
+                }
+                
+            }
+            else if(isNaN(num1 - num2) >= 0) {
+                for (let i = num2; i <= num1; i++) {
+                    suma = suma + i;
+                    document.getElementById("sumar").innerHTML = "La suma de los valores comprendidos entre los núemros es: " + suma;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

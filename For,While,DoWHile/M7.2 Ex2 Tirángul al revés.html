@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triángulo al revés</title>
+</head>
+
+<body>
+    <h1>Triángulo al revés</h1>
+    <p>Introduce un número de líneas: <input type="number" id="num" value=" "></p>
+    <p><button onclick="dibujarTriángulo()">Dibuja triángulo</button></p>
+    <p id="dibujo"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function dibujarTriángulo() {
+            //Variables
+            let num = Number(document.getElementById("num").value);
+            let línea = "";
+            let resultado = "";
+
+            for (let i = 0; i < num; i++) {
+
+                for (let j = num; j > i; j--) {
+                    línea += "*" ;
+                }
+                resultado += línea + "<br>";
+                línea = " ";
+
+            }
+            document.getElementById("dibujo").innerHTML += resultado;
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

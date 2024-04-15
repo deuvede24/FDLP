@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+      h1{color:red; font-size: 120%;}
+      p {margin:0; line-height: 1.5;}
+      span {display: inline-block; width: 15em;}
+   </style>
+   <title>FIDEÚA</title>
+</head>
+<body>
+   <h1>Coste de una Fideúa</h1>
+   <p>Dime el precio por kilo de los ingedientes y el número de comensales</p>
+   <blockquote>
+      <p><span> Fideos: </span> <input type="number" id="fideos" value=" "/></p>
+      <p><span> Calamares: </span> <input type="number" id="calamares" value=" "/></p>
+      <p><span> Gambas: </span> <input type="number" id="gambas" value=" "/></p>
+      <p><span> Comensales: </span> <input type="number" id="numPersonas" value =" "/></p>
+    </blockquote>
+      <p id = "resultado" ></p>
+      <p><button onclick="calcular()"> resultados </button></p>
+
+   <script>
+      // Completar la siguiente función para que el test se haga operativo
+      // La <b> coloca en negrita el texto
+         
+      function calcular(){
+      const F = (0.125);
+      const G = (0.05);
+      const C = (0.02);
+        let preuFideos = Number(document.getElementById("fideos").value);
+        let preuCalamares = Number(document.getElementById("calamares").value);
+        let preuGambas = Number(document.getElementById("gambas").value);
+        let numPersonas = Number(document.getElementById("numPersonas").value);
+        let cantFideos = numPersonas * F;
+        let cantCalamares = numPersonas * C;
+        let cantGambas = numPersonas * G;
+        let preuTotalFideos = cantFideos * preuFideos;
+        let preuTotalCalamares = cantCalamares * preuCalamares;
+        let preuTotalGambas = cantGambas * preuGambas;
+        let PreuTotal = preuTotalFideos + preuTotalCalamares + preuTotalGambas ;
+        let PreuPersona = PreuTotal/numPersonas;
+
+        let mensaje = "Para esta receta necesitas: " + cantFideos.toFixed(2) + "grs de Fideos " + cantCalamares.toFixed(2) + "grs. de Calamar " + cantGambas.toFixed(2) + "grs. de Gambas.  El precio total es: " + PreuTotal.toFixed(2)+ " y el precio por persona es: " + PreuPersona.toFixed(2);
+        document.getElementById("resultado").innerHTML = mensaje;
+
+      }
+      </script>
+   
+
+</body>
+</html

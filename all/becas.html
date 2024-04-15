@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Becas</title>
+</head>
+
+<body>
+    
+    <h1>Aptitud Becas</h1>
+
+
+    <p><button onclick="comprobarBeca()">Comprobar</button></p>
+    <p id="resultado"></p>
+    <p id="mostrar"></p>
+
+    <script>
+        function comprobarBeca() {
+            let becas = 0;
+            let array = [];
+            let edad;
+            let paro;
+            let nombre;
+            let titulo;
+
+            for (becas = 0; becas <= 4; becas++)
+                while (becas <= 4) { //bucle que parará cuando el número de  becas otorgadas sean 5
+                    nombre = prompt("Introduce tu nombre", "Paco"); //pedimos los datos necesarios al usuario
+                    edad = prompt("Introduce tu edad", "18");
+                    titutlo = prompt("Tienes título universitario?, S/N", "S");
+                    paro = prompt("Estás en el paro?, S/N", "S");
+
+                    if ((edad < 18 && titulo != ("S" || "s")) || (paro === ("N" || "n")))//condición para comprobar NO aptitud de beca
+                        alert("Lo sentimos, no eres apto para una beca");
+                    else
+                        if ((edad >= 18 && titulo === ("S" || "s")) || (paro === ("S" || "s"))) { //condición que sí otorga una beca en caso de cumplirse
+                            alert(nombre + " es apto para una beca ") //alertamos con un mensaje al usuario que se otorgó una beca
+                            array.push(nombre); // cuando de cumple lo anterior vamos rellenando nuestro array que contiene el nombre de las personas aptas para becas
+                            console.log("becas 4?:,", nombre); //console log para verificar que no he llegado al límite de becas a otorgar
+                            becas++; // incremento la variable becas pues es quien me sacarái del cucle while cuando llegue a su comitivo que es llegar a 5
+                        }
+                    console.log("becas 5?:,", becas);
+                    document.getElementById("resultado").innerHTML = "Feliciadades, " + array + " son aptos para una beca"; //muestro por pantalla los nombres de los aptos a becas una vez han sido otrogadas aquellas 5 máximas
+                }
+        }
+    </script>
+</body>
+
+</html>

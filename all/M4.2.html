@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condicional IF grado</title>
+</head>
+<body>
+ <h2>¿A qué curso vas?</h2>
+  <p>Dime tu edad: <input type="number" id="edad" value =" "></p>
+ 
+  <p><button onclick="grado()">Comprobar grado</button></p>
+  <p id="resultado"></p>
+
+  <script>
+    //6<=edad<=11
+    //16<=edad<=17
+    function grado(){
+      let edad = document.getElementById("edad").value;
+      let resultado = " ";
+
+      if (edad<=5){
+        resultado += "Preescolar"
+        } 
+            else if (edad>=6 && edad <=11){
+                resultado += "Primaria"
+            } 
+               else if (edad>=12 && edad <=15){
+                    resultado += "Eso"
+                } 
+                    else if (edad >=16 && edad<=17){
+                        resultado += "Bachillerato"
+                    }
+                      else if (edad >=18){
+                           resultado += "FP o Universidad" 
+                        } 
+      
+      document.getElementById("resultado").innerHTML = resultado;
+       
+      
+    
+}
+  </script>
+
+</body>
+</html>
+    

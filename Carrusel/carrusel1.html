@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Carrusel</title>
+   <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+   <h1>Carrusel de imágenes</h1>
+   <div id="container">
+      <p><img src="./img/barcelona.jpg" id="imagen"></p>
+      <p>
+         <button id="retroceder" onclick="retroceder()">Retroceder</button>
+         <span id="nombreImagen">barcelona.jpg</span>
+         <button id="avanzar" onclick="avanzar()">Avanzar</button>
+      </p>
+   </div>
+
+
+   <script>
+      const RUTA = "./img/";
+      const imagenes = ["barcelona.jpg", "londres.jpg", "newyork.jpg", "paris.jpg"];
+      let posicion = 0;
+      mostrar();
+
+      function mostrar() {
+         let imagen = RUTA + imagenes[posicion];
+         console.log(imagen);
+         console.log(posicion);
+         document.getElementById("imagen").src = imagen;
+         document.getElementById("nombreImagen").innerHTML = imagen;
+
+      }
+
+      function avanzar() {
+         posicion++;
+         if (posicion === imagenes.length) {
+            posicion = 0;
+         }
+         mostrar();
+      }
+
+      function retroceder() {
+         posicion--;
+         if (posicion ===-1) {
+            posicion = imagenes.length - 1
+         }
+         mostrar();
+      }
+
+   </script>
+
+</body>
+
+</html

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrada y Salida de Datos</title>
+</head>
+<body>
+  <h1>Ejercicio M3.1</h1>
+  <p><button onclick="mostrar()">Comenzar</button></p>
+  <p id="resp"></p>
+  <p id="nombre"></p>
+  <p id="apellido"></p>
+  <p id="edad"></p>
+
+
+  <script>
+    function mostrar() {
+
+      // las variables 
+      let nom = prompt("Cuál es tu nombre:",'María');
+      let ape = prompt("Escribe tu apellido:",'Pérez'); 
+      //Todo lo que viene de prompt es un string entonces lo convertimos a número
+      //let años = Number (prompt("Escribe tu edad:",'40')); esto lo hemos quitado para poder poner en negrita la edad (como texto)
+      let años = prompt("Escribe tu edad:",'40');
+
+        //En consola
+        console.clear;
+        console.log("nom tiene el valor:", nom);
+        console.log("ape tiene el valor:", ape);
+        console.log("edad tiene el valor:", años);
+        console.log("edad es de tipo:", typeof(años));
+        
+        let mensaje ='';
+        mensaje = 'Hola, te llamas ' + nom + ' ' + ape + ' y tienes ' + años + ' años.'
+        alert(mensaje);
+
+        //Variable resp para que aparezca "Tus respuestas" al darle al llamar a la función y no antes
+        let resp;
+        document.getElementById("resp").innerHTML = "Tus Respuestas:";
+
+        //utilizamos.bold() para obtener lso resultados en negrita por pantalla
+        document. getElementById("nombre").innerHTML= "Tu nombre es: <b>" + nom + "</b>" ;
+        document. getElementById("apellido").innerHTML= "Tu apellido es: " + ape.bold() ;
+        document. getElementById("edad").innerHTML= "Tu edad es: " + años.bold();
+    }
+
+  </script>
+  
+</body>
+</html>

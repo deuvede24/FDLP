@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números primos</title>
+</head>
+
+<body>
+    <h1>Sucesión Fibonacci</h1>
+    <p>Introduce un número: <input type="number" id="num"></p>
+    <p><button onclick="calcular()">Prueba</button></p>
+    <p id="resultado"></p>
+
+
+
+    <script>
+        //TODO LO QUE VIENE DE HTML VA A SER TEXTO
+        function calcular() {
+            //Variables
+
+            let num = Number(document.getElementById("num").value);
+            let n1 = 0;
+            let n2 = 1;
+            let result = 0;
+        
+
+            while (num>= result) {
+
+                n1 = n2;
+                n2 = result;
+                result = n1 + n2
+                console.log("el resto es:", result);
+                document.getElementById("resultado").innerHTML = result;
+            }
+
+
+           /* if (resto !== 0) {
+                mensaje = "Este SÍ es un número primo";
+                console.log("el resto es:", resto);
+                // alert("Es un número primo");
+            }
+            else {
+                mensaje = "Este NO es un número primor";
+                console.log("el resto es:", resto);
+            }*/
+
+
+
+
+
+           // document.getElementById("resultado").innerHTML = result;
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
